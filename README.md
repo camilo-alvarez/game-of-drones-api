@@ -211,13 +211,10 @@ docker build -t game-of-drones-api .
 docker run -p 3000:3000 -e MONGODB_URI=mongodb://host.docker.internal:27017/game-of-drones game-of-drones-api
 ```
 
-## 📝 Licencia
-
-ISC
 
 ## 👤 Autor
 
-[Tu Nombre]
+[Juan Camilo Alvarez Granada]
 
 ---
 
