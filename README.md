@@ -28,7 +28,7 @@ Backend desarrollado con Node.js, TypeScript, Express y MongoDB que permite gest
 
 ```bash
 # Clonar el repositorio
-git clone <repository-url>
+git clone https://github.com/camilo-alvarez/game-of-drones-api.git
 cd game-of-drones-api
 
 # Instalar dependencias
