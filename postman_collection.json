@@ -1,0 +1,155 @@
+{
+  "info": {
+    "name": "Game of Drones API",
+    "description": "REST API for Game of Drones - Rock, Paper, Scissors multiplayer game",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api/v1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Players",
+      "item": [
+        {
+          "name": "Create Player",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/players",
+              "host": ["{{baseUrl}}"],
+              "path": ["players"]
+            }
+          }
+        },
+        {
+          "name": "Get All Players",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/players",
+              "host": ["{{baseUrl}}"],
+              "path": ["players"]
+            }
+          }
+        },
+        {
+          "name": "Get Player Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/players/:id/stats",
+              "host": ["{{baseUrl}}"],
+              "path": ["players", ":id", "stats"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Matches",
+      "item": [
+        {
+          "name": "Create Match",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"player1Id\": \"\",\n  \"player2Id\": \"\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/matches",
+              "host": ["{{baseUrl}}"],
+              "path": ["matches"]
+            }
+          }
+        },
+        {
+          "name": "Get Match by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/matches/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["matches", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Register Move",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"playerId\": \"\",\n  \"move\": \"rock\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/matches/:id/move",
+              "host": ["{{baseUrl}}"],
+              "path": ["matches", ":id", "move"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    }
+  ]
+}
